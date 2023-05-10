@@ -1,3 +1,22 @@
+<?php
+     include("config.php");
+
+         switch(@$_REQUEST["page"]){
+
+            case "salvar":
+                include("save.php");
+            break;
+     
+        case "listar":
+            include("lista.php");
+            break;
+        case "editar":
+            include("editar.php");
+            break;        
+        
+        }
+     ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -56,26 +75,7 @@
           
     </main>
 
-    <?php
-     include("config.php");
-
-         switch(@$_REQUEST["page"]){
-
-            case "salvar":
-                include("save.php");
-            break;
-     
-        case "listar":
-            include("lista.php");
-            break;
-        }
-     ?>
+   
 
 </body>
-
-
-
-
-
-
 </html>

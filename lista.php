@@ -7,7 +7,7 @@
 </head>
 
 <?php
-    // Establishing database connection
+   
     $host     = 'localhost';
     $username = 'root';
     $password = '';
@@ -19,12 +19,12 @@
         die("Connection failed: " . $conn->connect_error);
     }
 
-    // Executing SQL query
+   
     $sql = "SELECT * FROM usuarios";
     $result = $conn->query($sql);
     $qtd = $result->num_rows;
 
-    // Printing table
+    
     
 
     if($qtd > 0){
@@ -44,14 +44,14 @@
             print "<td>".$row->id. "</td>";
             print "<td>".$row->email. "</td>";
             print "<td>
-            <button class=actions>editar</button>
-            <button class=actions>Excluir</button>
+            <button class='actions edit' onclick=\"window.location.href='editar.php?&id=".$row->id."';\" />editar</button>
+            <button class='actions delete' onclick=\"if(confirm('Tem certeza que deseja excluir o usuário?')){location.href='delete.php?id=".$row->id."';}else{false;}\">Excluir</button>
             </td>";
             print "</tr>";
         }
         print("</table>");
         print("</div>");
-        print("<input type='button' value='Voltar' class='voltar-btn' onclick=\"window.location='index.php'\" />");
+        print("<input type='button' value='Voltar' class='voltar-btn' onclick=\"window.location.href='index.php';\" />");
         print "</div>";
     } else {
         echo "<p class='sem-cad'>Não há cadastros no momento</p>";

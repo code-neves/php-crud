@@ -109,7 +109,7 @@ main{
 }
 .continue-btn,
  .lista-btn,
-  .voltar-btn
+  .voltar-btn, .actions
   {
     background-color: #1473E6;
     color: white;
@@ -122,6 +122,14 @@ main{
     width: 115px;
     text-decoration: none;
     padding: 0.5rem;
+    transition: 150ms ease;
+}
+
+.continue-btn:hover,
+ .lista-btn:hover,
+  .voltar-btn:hover, .actions:hover
+  {
+    cursor: pointer;
     transition: 150ms ease;
 }
 
@@ -223,7 +231,15 @@ th
 .actions
 {
     border: none;
-    
+    width:80px;
+    margin: 0.1rem 1rem;
+}
+
+.delete{
+background-color: red;
+}
+.edit{
+background-color: rgb(64, 157, 249);
 }
 .voltar-btn 
 {
@@ -323,10 +339,6 @@ th
     th{
         background-color: #1473E6;
         color: white;
-    }
-    .actions{
-        border: none;
-        
     }
     .voltar-btn {
         color: #fff;
